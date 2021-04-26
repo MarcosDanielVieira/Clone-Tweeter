@@ -108,8 +108,7 @@
             Renderizando resultado da transição de página
           --}}
           
-          {{-- @include('App.feed.feeds') --}}
-
+          {{-- @include('app.feed.feeds') --}}
           
             <h2>
               Feeds
@@ -145,7 +144,6 @@
 
             <div class="feeds"></div>
 
-          
         </div>
       </div>
     </div>
