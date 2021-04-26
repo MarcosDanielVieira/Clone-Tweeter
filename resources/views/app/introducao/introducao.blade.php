@@ -43,13 +43,13 @@
         Renderizando formulario de login
       --}}
       
-        @include('App.Form.Login')
+        @include('app.form.login')
 
       {{-- 
         Renderizando formulario de cadastro
       --}}
       
-        @include('App.Form.Cadastro')
+        @include('app.form.cadastro')
 
     </div>
 
