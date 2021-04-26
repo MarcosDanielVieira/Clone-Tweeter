@@ -87,14 +87,40 @@ $(document).ready(function () {
 
 
   /**
+   * Função que constroe os comentários
+   */
+
+  function constroComentarios(usuario, data, comentario) {
+    return `
+      <div class="div-comentario-existente">
+
+        <p class="nome-perfil-comentario">
+          ${usuario}
+        </p>
+
+        <small class="dataComentario">
+          Comentado no dia ${data}
+        </small>
+
+        <p class="comentario">
+          ${comentario}
+        </p>
+
+      </div>
+    `;
+  }
+
+
+  /**
    * 
    * Criando função que renderiza feed
    */
 
+
   function constroeDivFeed(nome, dataPublic, texto) {
     return `
       <div class="div-publicacao-feed">
-        
+        s
         <p class="nome-perfil-publicacao sombraDiv">
           ${nome}
         </p>
@@ -116,6 +142,7 @@ $(document).ready(function () {
   }
 
 
+
   /**
    * Função de carregar posts somente de quem o usuario logado segue
    */
@@ -133,7 +160,14 @@ $(document).ready(function () {
 
         if (valores.length > 0) {
           jQuery.each(valores, function (i, val) {
-            // nome, dataPublic, texto)
+
+            /**
+             * A função constroeDivFeed vai ser chamada após fazer consulta dos posts
+             * Após a consulta ela joga para view o resultado em formato de html
+             * O que precisa ser feito é colocar o html dos comentários abaixo do resultado da função constroeDivFeed
+             * 
+             */
+
             $(".feeds").prepend(
               constroeDivFeed(
                 val['Usuario'],
@@ -141,7 +175,6 @@ $(document).ready(function () {
                 val['Publicacao']
               )
             );
-
 
           });
 

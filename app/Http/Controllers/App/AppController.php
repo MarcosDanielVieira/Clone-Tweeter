@@ -549,7 +549,6 @@ class AppController extends Controller
     public function publicaoSeguir($id_user)
     {
 
-
         if ($this->checkFollow($id_user)) {
             $View_Publicao      = resolve('App\Models\View_Publicao');
 
@@ -559,6 +558,24 @@ class AppController extends Controller
         } else {
             return "";
         }
+
+        return response()->json($qr);
+    }
+
+
+    /**
+     * Função de verificar se post foi comentado
+     * Caso comentado retorna informações view
+     */
+
+    public function comentarioPost($idpost)
+    {
+
+        $View_Comentario      = resolve('App\Models\View_Comentario');
+
+        $qr = $View_Comentario->where([
+            "IdPublicacao"    => $idpost,
+        ])->get();
 
         return response()->json($qr);
     }

@@ -14,7 +14,7 @@
       Renderizando modal de erro ou acerto
     --}}
       
-    @include('App.erro.erro_acerto')
+    @include('app.erro.erro_acerto')
 
      {{-- 
       Renderizando de erro encontrados via framework

@@ -30,4 +30,5 @@ Route::middleware([VerificaUsuarioLogado::class])->group(function () {
   Route::post('/seguir', "App\AppController@seguir")->name('seguir');
   Route::get('/checkFollow/{id}', "App\AppController@checkFollowJson")->name('checkFollow');
   Route::get('/publicaoSeguir/{id}', "App\AppController@publicaoSeguir")->name('publicaoSeguir');
+  Route::get('/comentarioPost/{id}', "App\AppController@comentarioPost")->name('comentarioPost');
 });
