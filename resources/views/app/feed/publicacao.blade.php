@@ -58,7 +58,7 @@
           Renderizando modal de erro ou acerto
         --}}
         
-        @include('App.Erro.ErroOuAcerto')
+        @include('app.erro.erro_acerto')
 
         <div class="container-publicacoes">
 

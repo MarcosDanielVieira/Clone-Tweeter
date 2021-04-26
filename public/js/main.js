@@ -108,6 +108,8 @@ $(document).ready(function () {
         <p class="texto-publicacao">
           ${texto}
         </p>
+
+        <div class="divComentario"></div>
         
       </div>
     `;

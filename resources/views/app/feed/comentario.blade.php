@@ -35,7 +35,7 @@
 @endisset
 
 {{-- 
-  Renderizando modal de erro ou acerto
+  Renderizando formulário comentário
 --}}
   
 @include('App.Form.FormComentario')
