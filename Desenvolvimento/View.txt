@@ -1,0 +1,66 @@
+
+DROP VIEW IF EXISTS view_comentario;
+CREATE VIEW view_comentario
+as SELECT
+
+    comentario.comentario as "Comentario",
+    DATE_FORMAT(comentario.created_at,'%d/%m/%Y às %Hh%im') as "Comentado",
+	
+    usuario.nome as "UsuarioComentou",
+    usuario.id as "IdUsuarioComentou",
+    
+    pubicacao.id as "IdPublicacao",
+    pubicacao.usuario as "IdUsuarioPostou",
+    pubicacao.texto as "Publicacao"
+    
+        
+from comentario
+INNER JOIN usuario on usuario.id = comentario.usuario
+INNER JOIN pubicacao on pubicacao.id  = comentario.publicacao
+
+
+---------------------------------------------------
+
+
+
+DROP VIEW IF EXISTS view_publicao;
+CREATE VIEW view_publicao
+as SELECT
+
+	pubicacao.id as "IdPublicacao",
+    pubicacao.texto as "Publicacao",
+    DATE_FORMAT(pubicacao.created_at,'%d/%m/%Y às %Hh%im') as "Publicado",
+    
+   	usuario.id AS "IdUsuario",
+    usuario.nome as "Usuario"
+
+from pubicacao
+INNER JOIN usuario on usuario.id = pubicacao.usuario
+
+
+---------------------------------------------------
+
+
+
+
+DROP VIEW IF EXISTS view_seguidores;
+CREATE VIEW view_seguidores
+as SELECT
+
+   usuarios_seguir.id_usuario as "UsuarioLogado",
+   usuarios_seguir.id_seguido as "UsuarioSeguido",
+   
+   usuario.nome as "NomeSeguido",
+   usuario.email as "Email"
+    
+        
+from usuarios_seguir
+INNER JOIN usuario on usuario.id = usuarios_seguir.id_seguido
+
+
+
+---------------------------------------------------
+
+
+
+
