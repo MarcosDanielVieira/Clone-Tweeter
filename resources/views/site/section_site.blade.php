@@ -1,7 +1,7 @@
 @extends( "app.templates.home" )
 
 @section( "section_todo" )
-  @include ( "app.introducao.view_introducao" )
+  @include ( "app.introducao.introducao" )
 @endsection
 
 @section('Site.ErroInterno')

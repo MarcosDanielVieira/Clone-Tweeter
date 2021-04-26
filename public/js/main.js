@@ -120,7 +120,7 @@ $(document).ready(function () {
   function constroeDivFeed(nome, dataPublic, texto) {
     return `
       <div class="div-publicacao-feed">
-        s
+      
         <p class="nome-perfil-publicacao sombraDiv">
           ${nome}
         </p>

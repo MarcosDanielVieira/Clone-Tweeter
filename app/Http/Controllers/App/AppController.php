@@ -119,7 +119,6 @@ class AppController extends Controller
 
                 ];
 
-
                 return view("site." . $temEmTodos['view'], $dados_view, $temEmTodos);
             } else {
                 return $this->feed();
