@@ -9,11 +9,12 @@
 
     <p class="nome-perfil-publicacao sombraDiv">
       {{$item->Usuario}}
+    </p>
+    
     <p>
       <small>
         Publicado no dia {{$item->Publicado}}
       </small>
-    </p>
     </p>
 
     <p class="texto-publicacao">
