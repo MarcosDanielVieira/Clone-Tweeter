@@ -83,7 +83,7 @@ class AppController extends Controller
 
                     "styles"                => [
                         // "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css",
-                        "https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css",
+                        // 
                     ],
 
 
@@ -94,6 +94,7 @@ class AppController extends Controller
                     "css_custom"                                   => [
 
                         // "css/normalize.css",
+                        "css/bootstrap.min.css",
                         "css/webflow.css",
                         "css/desafio.webflow.css",
                         "css/spinner.css"
@@ -107,8 +108,9 @@ class AppController extends Controller
 
                     "scripts"               => [
 
-                        "https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d.js",
+                        // "https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d.js",
                         // "https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js",
+                        "https://code.jquery.com/jquery-3.5.1.slim.min.js",
                         "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js",
                         "https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js",
                         "js/webflow.js",
