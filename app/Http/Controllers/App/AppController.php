@@ -195,6 +195,10 @@ class AppController extends Controller
                 $objUsuario->nome   = $request->input("cadastro_nome");
                 $objUsuario->save();
 
+                /**
+                 * Mandndo mensagem que deu certo para modal
+                 */
+
                 session()->flash('success', 'Informações cadastradas com sucesso!');
             } else {
                 session()->flash('error', 'E-mail já existe cadastrado, tente outro.');
