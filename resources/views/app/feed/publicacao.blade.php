@@ -1,10 +1,8 @@
 
-
 <div id="carregaSite"></div>
 
 <div class="row">
 
-  
 
   <div class="col-9">
 
@@ -105,12 +103,6 @@
               
             </div>
           </div>
-
-          {{-- 
-            Renderizando transição de página
-          --}}
-          
-          @include('App.feed.transicao')
 
           {{-- 
             Renderizando resultado da transição de página

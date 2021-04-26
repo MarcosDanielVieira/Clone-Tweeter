@@ -1,21 +1,35 @@
 
+<h2>
+  Feeds
+</h2>
 
-<div class="tab-content" id="myTabContent">
-  
-  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-    
-    {{-- 
-      Renderizando do feed primário
+@isset($objPublicacao)
+  @foreach ($objPublicacao as $item)
+  <div class="div-publicacao-feed">
+
+    <p class="nome-perfil-publicacao sombraDiv">
+      {{$item->Usuario}}
+    <p>
+      <small>
+        Publicado no dia {{$item->Publicado}}
+      </small>
+    </p>
+    </p>
+
+    <p class="texto-publicacao">
+      {{$item->Publicacao}}
+    </p>
+
+    {{--
+      Renderizando comentário se existir
     --}}
-    
-    @include('App.feed.publicPrimario')
-    
-  </div>
 
-  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-    <h2>
-      Feed secundário
-    </h2>
-  </div>
+    @include('App.Feed.comentario')
 
-</div>
+  </div>
+  @endforeach
+@endisset
+
+<div class="feeds"></div>
+
+
