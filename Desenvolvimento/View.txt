@@ -1,4 +1,3 @@
-
 DROP VIEW IF EXISTS view_comentario;
 CREATE VIEW view_comentario
 as SELECT
@@ -9,14 +8,14 @@ as SELECT
     usuario.nome as "UsuarioComentou",
     usuario.id as "IdUsuarioComentou",
     
-    pubicacao.id as "IdPublicacao",
-    pubicacao.usuario as "IdUsuarioPostou",
-    pubicacao.texto as "Publicacao"
+    publicacao.id as "IdPublicacao",
+    publicacao.usuario as "IdUsuarioPostou",
+    publicacao.texto as "Publicacao"
     
         
 from comentario
 INNER JOIN usuario on usuario.id = comentario.usuario
-INNER JOIN pubicacao on pubicacao.id  = comentario.publicacao
+INNER JOIN publicacao on publicacao.id  = comentario.publicacao
 
 
 ---------------------------------------------------
@@ -32,10 +31,15 @@ as SELECT
     DATE_FORMAT(publicacao.created_at,'%d/%m/%Y às %Hh%im') as "Publicado",
     
    	usuario.id AS "IdUsuario",
-    usuario.nome as "Usuario"
+    usuario.nome as "Usuario",
+    
+    view_comentario.Comentario as "Comentario",
+    view_comentario.Comentado as "Comentado",
+    view_comentario.UsuarioComentou as "UsuarioComentou"
 
 from publicacao
 INNER JOIN usuario on usuario.id = publicacao.usuario
+LEFT JOIN view_comentario on view_comentario.IdPublicacao = publicacao.id
 
 ---------------------------------------------------
 

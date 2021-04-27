@@ -6,33 +6,24 @@
   
 --}}
 
-@isset($objComentario)
-   
-  @foreach ($objComentario as $coment)
+@if ($item->Comentado != "")
+  <div class="div-comentario-existente">
 
-    @if ($item->IdPublicacao == $coment->IdPublicacao)
+    <p class="nome-perfil-comentario">
+      {{$item->UsuarioComentou}}
+    </p>
 
-      <div class="div-comentario-existente">
+    <small class="dataComentario">
+      Comentado no dia {{$item->Comentado}}
+    </small>
 
-        <p class="nome-perfil-comentario">
-          {{$coment->UsuarioComentou}}
-        </p>
+    <p class="comentario">
+      {{$item->Comentario}} 
+    </p>
 
-        <small class="dataComentario">
-          Comentado no dia {{$coment->Comentado}}
-        </small>
+  </div>
+@endif
 
-        <p class="comentario">
-          {{$coment->Comentario}} 
-        </p>
-
-      </div>
-        
-    @endif
-
-  @endforeach
-
-@endisset
 
 {{-- 
   Renderizando formulário comentário
