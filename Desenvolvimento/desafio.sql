@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 27-Abr-2021 às 04:03
+-- Tempo de geração: 27-Abr-2021 às 04:52
 -- Versão do servidor: 10.4.13-MariaDB
 -- versão do PHP: 7.2.31
 
@@ -150,9 +150,11 @@ CREATE TABLE `usuarios_seguir` (
 --
 
 INSERT INTO `usuarios_seguir` (`id`, `id_usuario`, `id_seguido`, `seguindo`, `updated_at`, `created_at`) VALUES
-(1, 4, 1, 'N', '2021-04-25 13:44:06', '2021-04-25 13:43:54'),
+(1, 4, 1, 'N', '2021-04-27 02:45:38', '2021-04-25 13:43:54'),
 (2, 2, 1, 'S', '2021-04-27 02:01:15', '2021-04-27 02:01:15'),
-(3, 4, 1, 'S', '2021-04-27 02:02:18', '2021-04-27 02:02:18');
+(3, 4, 1, 'N', '2021-04-27 02:45:38', '2021-04-27 02:02:18'),
+(4, 4, 3, 'S', '2021-04-27 02:13:35', '2021-04-27 02:13:35'),
+(5, 4, 1, 'S', '2021-04-27 02:45:46', '2021-04-27 02:45:46');
 
 -- --------------------------------------------------------
 
@@ -298,7 +300,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `usuarios_seguir`
 --
 ALTER TABLE `usuarios_seguir`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Restrições para despejos de tabelas
