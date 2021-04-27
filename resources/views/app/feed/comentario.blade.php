@@ -24,9 +24,8 @@
   </div>
 @endif
 
-
 {{-- 
   Renderizando formulário comentário
 --}}
   
-@include('App.Form.FormComentario')
+@include('app.form.FormComentario')

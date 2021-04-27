@@ -48,7 +48,7 @@ $(document).ready(function () {
     jQuery.ajax({
       type: 'GET',
       async: true,
-      url: '/checkFollow/' + id,
+      url: '/checkFollowJson/' + id,
       success: function (valores) {
 
         if (valores.length > 0) {
@@ -62,12 +62,13 @@ $(document).ready(function () {
 
               elemento.addClass("desseguir");
               elemento.val("Desseguir");
+              $(".feed".id).show();
 
             } else {
 
               elemento.removeClass("desseguir");
               elemento.val("Seguir");
-
+              $(".feed" + id).hide();
             }
 
           });
@@ -75,6 +76,7 @@ $(document).ready(function () {
         } else {
           elemento.removeClass("desseguir");
           elemento.val("Seguir");
+          $(".feed" + id).hide();
         }
 
       },

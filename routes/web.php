@@ -28,5 +28,5 @@ Route::middleware([VerificaUsuarioLogado::class])->group(function () {
   Route::post('/publicaMensagem', "App\AppController@publicaMensagem")->name('publicaMensagem');
   Route::post('/comentario', "App\AppController@comentario")->name('comentario');
   Route::post('/seguir', "App\AppController@seguir")->name('seguir');
-  Route::get('/checkFollow/{id}', "App\AppController@checkFollowJson")->name('checkFollow');
+  Route::get('/checkFollowJson/{id}', "App\AppController@checkFollowJson")->name('checkFollowJson');
 });

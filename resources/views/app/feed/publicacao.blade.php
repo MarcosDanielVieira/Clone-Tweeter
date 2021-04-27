@@ -116,7 +116,7 @@
           
           @isset($objPublicacao)
             @foreach ($objPublicacao as $item)
-              <div class="div-publicacao-feed">
+              <div class="div-publicacao-feed feed{{$item->IdUsuario}}">
 
                 <p class="nome-perfil-publicacao sombraDiv">
                   {{$item->Usuario}}
@@ -177,7 +177,7 @@
               Renderizando view seguir
             --}}
           
-            @include('App.Form.Seguir')
+            @include('app.form.seguir')
               
           @endif
 

@@ -21,7 +21,7 @@
             Renderizando view seguir
           --}}
         
-          @include('App.Form.Seguir')
+          @include('app.form.seguir')
             
         @endif
 

@@ -276,12 +276,10 @@ class AppController extends Controller
                 $temEmTodos         = $this->temEmTodos("section_site", "Publicações");
                 $objUsuario         = resolve('App\Models\Usuario');
                 $objPublicacao      = resolve('App\Models\View_Publicacao');
-                $objSeguidores      = resolve('App\Models\View_Seguidores');
 
                 $usuario            = $objUsuario->where('id', "=", session("guarda.usuarioLogado"))->get();
                 $publicacao         = $objPublicacao->orderBy("Publicado", "DESC")->get();
                 $listaUsuario       = $objUsuario->get();
-                $seguidores         = $objSeguidores->get();
 
                 $primeiroNome       = explode(' ', trim($usuario[0]->nome));
 
@@ -319,9 +317,7 @@ class AppController extends Controller
                      */
 
                     "objPublicacao"         => $publicacao,
-                    // "objComentario"         => $comentario,
                     "objUsuario"            => $listaUsuario,
-                    "objSeguidores"         => $seguidores,
 
                     # ----------------------------------------
                     # --- Local para colocar os estilos da internet na página
