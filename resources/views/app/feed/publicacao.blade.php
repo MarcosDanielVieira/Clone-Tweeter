@@ -113,7 +113,6 @@
           <h2>
             Feeds
           </h2>
-
           
           @isset($objPublicacao)
             @foreach ($objPublicacao as $item)
@@ -123,10 +122,8 @@
                   {{$item->Usuario}}
                 </p>
                 
-                <p>
-                  <small>
-                    Publicado no dia {{$item->Publicado}}
-                  </small>
+                <p class="mt-1">
+                  Publicado no dia {{$item->Publicado}} 
                 </p>
 
                 <p class="texto-publicacao">
@@ -137,7 +134,7 @@
                   Renderizando comentário se existir
                 --}}
 
-                @include('App.Feed.comentario')
+                @include('app.feed.comentario')
 
               </div>
             @endforeach

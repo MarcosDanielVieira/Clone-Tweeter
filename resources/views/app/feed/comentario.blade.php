@@ -13,10 +13,10 @@
       {{$item->UsuarioComentou}}
     </p>
 
-    <small class="dataComentario">
+    <div class="dataComentario">
       Comentado no dia {{$item->Comentado}}
-    </small>
-
+    </div>
+    
     <p class="comentario">
       {{$item->Comentario}} 
     </p>
