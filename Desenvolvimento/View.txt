@@ -23,20 +23,19 @@ INNER JOIN pubicacao on pubicacao.id  = comentario.publicacao
 
 
 
-DROP VIEW IF EXISTS view_publicao;
-CREATE VIEW view_publicao
+DROP VIEW IF EXISTS View_Publicacao;
+CREATE VIEW View_Publicacao
 as SELECT
 
-	pubicacao.id as "IdPublicacao",
-    pubicacao.texto as "Publicacao",
-    DATE_FORMAT(pubicacao.created_at,'%d/%m/%Y às %Hh%im') as "Publicado",
+	publicacao.id as "IdPublicacao",
+    publicacao.texto as "Publicacao",
+    DATE_FORMAT(publicacao.created_at,'%d/%m/%Y às %Hh%im') as "Publicado",
     
    	usuario.id AS "IdUsuario",
     usuario.nome as "Usuario"
 
-from pubicacao
-INNER JOIN usuario on usuario.id = pubicacao.usuario
-
+from publicacao
+INNER JOIN usuario on usuario.id = publicacao.usuario
 
 ---------------------------------------------------
 

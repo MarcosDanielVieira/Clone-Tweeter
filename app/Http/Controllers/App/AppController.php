@@ -275,12 +275,12 @@ class AppController extends Controller
 
                 $temEmTodos         = $this->temEmTodos("section_site", "Publicações");
                 $objUsuario         = resolve('App\Models\Usuario');
-                $objPublicacao      = resolve('App\Models\View_Publicao');
+                $objPublicacao      = resolve('App\Models\View_Publicacao');
                 $objComentario      = resolve('App\Models\View_Comentario');
                 $objSeguidores      = resolve('App\Models\View_Seguidores');
 
                 $usuario            = $objUsuario->where('id', "=", session("guarda.usuarioLogado"))->get();
-                $publicacao         = $objPublicacao->where('IdUsuario', "=", session("guarda.usuarioLogado"))->orderBy("Publicado", "DESC")->get();
+                $publicacao         = $objPublicacao->orderBy("Publicado", "DESC")->get();
                 $comentario         = $objComentario->orderBy("Comentado", "ASC")->get();
                 $listaUsuario       = $objUsuario->get();
                 $seguidores         = $objSeguidores->get();
@@ -551,16 +551,25 @@ class AppController extends Controller
     {
 
         if ($this->checkFollow($id_user)) {
-            $View_Publicao      = resolve('App\Models\View_Publicao');
+            $View_Publicao      = resolve('App\Models\View_Publicacao');
 
-            $qr = $View_Publicao->where([
+            $qr1 = $View_Publicao->where([
                 "IdUsuario"        => $id_user,
             ])->get();
+
+            foreach ($qr1 as $value) {
+
+                $View_Comentario      = resolve('App\Models\View_Comentario');
+
+                $qr2 = $View_Comentario->where([
+                    "IdPublicacao"    => $value->IdPublicacao,
+                ])->get();
+            }
         } else {
             return "";
         }
 
-        return response()->json($qr);
+        return response()->json($qr1);
     }
 
 

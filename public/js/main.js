@@ -87,37 +87,39 @@ $(document).ready(function () {
 
 
   /**
-   * Função que constroe os comentários
-   */
-
-  function constroComentarios(usuario, data, comentario) {
-    return `
-      <div class="div-comentario-existente">
-
-        <p class="nome-perfil-comentario">
-          ${usuario}
-        </p>
-
-        <small class="dataComentario">
-          Comentado no dia ${data}
-        </small>
-
-        <p class="comentario">
-          ${comentario}
-        </p>
-
-      </div>
-    `;
-  }
-
-
-  /**
    * 
    * Criando função que renderiza feed
    */
 
 
-  function constroeDivFeed(nome, dataPublic, texto) {
+  function constroeDivFeed(nome, dataPublic, texto, usuario = null, data = null, comentario = null) {
+
+    var divComent;
+
+    if (usuario != null) {
+      return divComent = `
+        {{-- Div Comentário --}}
+
+        <div class="div-comentario-existente">
+
+          <p class="nome-perfil-comentario">
+            ${usuario}
+          </p>
+
+          <small class="dataComentario">
+            Comentado no dia ${data}
+          </small>
+
+          <p class="comentario">
+            ${comentario}
+          </p>
+
+        </div>
+      `;
+    }
+
+
+
     return `
       <div class="div-publicacao-feed">
       
@@ -135,7 +137,7 @@ $(document).ready(function () {
           ${texto}
         </p>
 
-        <div class="divComentario"></div>
+         ${divComent}
         
       </div>
     `;
@@ -161,6 +163,7 @@ $(document).ready(function () {
         if (valores.length > 0) {
           jQuery.each(valores, function (i, val) {
 
+            // console.log(val);
             /**
              * A função constroeDivFeed vai ser chamada após fazer consulta dos posts
              * Após a consulta ela joga para view o resultado em formato de html

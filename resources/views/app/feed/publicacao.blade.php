@@ -114,35 +114,36 @@
             Feeds
           </h2>
 
+          
           @isset($objPublicacao)
             @foreach ($objPublicacao as $item)
-            <div class="div-publicacao-feed">
+              <div class="div-publicacao-feed">
 
-              <p class="nome-perfil-publicacao sombraDiv">
-                {{$item->Usuario}}
-              </p>
-              
-              <p>
-                <small>
-                  Publicado no dia {{$item->Publicado}}
-                </small>
-              </p>
+                <p class="nome-perfil-publicacao sombraDiv">
+                  {{$item->Usuario}}
+                </p>
+                
+                <p>
+                  <small>
+                    Publicado no dia {{$item->Publicado}}
+                  </small>
+                </p>
 
-              <p class="texto-publicacao">
-                {{$item->Publicacao}}
-              </p>
+                <p class="texto-publicacao">
+                  {{$item->Publicacao}}
+                </p>
 
-              {{--
-                Renderizando comentário se existir
-              --}}
+                {{--
+                  Renderizando comentário se existir
+                --}}
 
-              @include('App.Feed.comentario')
+                @include('App.Feed.comentario')
 
-            </div>
+              </div>
             @endforeach
           @endisset
 
-          <div class="feeds"></div>
+          {{-- <div class="feeds"></div> --}}
 
         </div>
       </div>
