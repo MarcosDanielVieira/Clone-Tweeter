@@ -1,5 +1,5 @@
 Olá, me chamo Marcos Daniel e me interessei em fazer parte do time de desenvolvedores da Neex Brasil Agência Digital me inscrevendo assim na vaga de Desenvolvedor Web Full Stack – Remoto (CONTRATAÇÃO IMEDIATA).
-	Gostaria agradescer pelo contato, pela entrevista e agradecer também pelo desafio proposto que foi em clone simplificado do Twitter onde a aplicação deve conter os seguintes recursos: 
+	Gostaria agradescer pelo contato, pela entrevista e agradecer também pelo desafio proposto que foi um clone simplificado do Twitter onde a aplicação deve conter os seguintes recursos: 
 
     1. Cadastro de usuários;
     2. Login de usuários;
