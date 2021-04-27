@@ -157,6 +157,8 @@ class AppController extends Controller
                 return back()->with('error', 'E-mail ou senhas não confere!');
             }
         } catch (\Throwable $th) {
+
+            dd($th);
             return $this->mensagemErro(
                 $th,
                 "Houve um erro na requisição de fazer login."

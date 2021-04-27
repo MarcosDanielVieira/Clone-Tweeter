@@ -9,7 +9,7 @@
 
     <input 
       type="hidden" 
-      {{-- value="{{$item->IdPublicacao}}" --}}
+      value="{{$item->IdPublicacao}}"
       required
       name="comentario_id">
 
